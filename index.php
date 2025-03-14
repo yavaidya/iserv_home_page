@@ -57,10 +57,12 @@
 
 
         <!-- ======= Header ======= -->
-        <header id="header" class="fixed-top"
-            style="border: 0px; background: transparent; margin-top: 10px; display: flex; justify-content: center;">
+        <header id="header"
+            style="border: 0; background: transparent; margin-top: 10px; display: flex; justify-content: center;">
             <div class="container d-flex align-items-center justify-content-between"
-                style="margin: 10px; width: 100vw; max-width: 100vw;">
+                style="margin: 10px; width: 100vw; max-width: 100vw; position: relative;">
+
+                <!-- Left Section -->
                 <div>
                     <a href="https://play.google.com/store/apps/details?id=com.iserv&hl=en_US&gl=US" class="logo">
                         <img src="assets/img/goplay.png"
@@ -68,28 +70,36 @@
                             alt="">
                     </a>
                     <a href="https://apps.apple.com/uz/app/iserv-by-ithena/id1643709504" class="logo"
-                        style="margin-left: 15px; ">
+                        style="margin-left: 15px;">
                         <img src="assets/img/appStore.png"
-                            style="width: auto; height: 40px;border-radius: 10px; box-shadow: 0 0 8px 3px rgba(255,255,255,0.2);"
+                            style="width: auto; height: 40px; border-radius: 10px; box-shadow: 0 0 8px 3px rgba(255,255,255,0.2);"
                             alt="">
                     </a>
                 </div>
-                <div class="pull-right">
+
+                <!-- Centered Logo -->
+                <div style="position: absolute; left: 50%; transform: translateX(-50%);">
+                    <img src="assets/img/ITHENA_logo.png" alt="ITHENA_logo" class="img-fluid shadow-sm"
+                        style="width: 160px;">
+                </div>
+
+                <!-- Right Section -->
+                <div>
                     <a href="index.php" class="logo">
                         <img src="assets/img/onelinkQR.png" style="width: auto; height: 60px;" alt="" class="img-fluid">
                     </a>
-
                 </div>
+
             </div>
-        </header><!-- End Header -->
+        </header>
+        <!-- End Header -->
 
         <section id="hero" class="d-flex align-items-center">
-            <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+            <div class="container position-relative" data-aos="fade-up" data-aos-delay="100" style="width: 80vw;
+    max-width: 80vw;">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-9 text-center">
-                        <img src="assets/img/ITHENA_logo.png" alt="ITHENA_logo" class="img-fluid shadow-sm"
-                            style="width: 30%;" />
-                        <p style="margin: 20px 0; color: #f1f1f1;">From engineering to manufacturing to servicing,
+                        <p style="margin: 10px 0; color: #f1f1f1;">From engineering to manufacturing to servicing,
                             get a 360-degree experience on your manufacturing journey!<a href="https://ithena.ai"
                                 style="margin-left: 5px; color: #fff !important; font-weight: 700;"
                                 class="text-info">Learn
@@ -118,63 +128,96 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- OEM Cards (Hidden by Default) -->
-                <div class="row justify-content-center" id="oemCards" style="display: none;">
+                <div class="row justify-content-center mb-4" id="oemCardHeadings" style="display: none; ">
                 </div>
 
-                <!-- Manufacturer Extra Card (Hidden by Default) -->
-                <div class="row justify-content-center" id="manufacturerExtraCard" style="display: none; "></div>
+                <div class="row justify-content-center mb-4" id="manuCardHeadings"
+                    style="display: none; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                </div>
+                <!-- OEM Cards (Hidden by Default) -->
+                <div class="row justify-content-center" id="productCards" style="display: none;">
+                </div>
+
+
 
             </div>
         </section>
 
         <script>
         const prod_list = {
-            "oem": [{
+            "oem": {
+                "Asset Management": [{
                     "name": "Performance Monitoring",
                     "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
                     "icon": "bi bi-graph-up-arrow",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
-                },
-                {
-                    "name": "Service Portal",
-                    "url": "https://iserv-demo.ithena.io/iserv",
-                    "icon": "bi bi-person-fill-gear",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
-                },
-                {
-                    "name": "B2B eCommerce",
-                    "url": "https://ecommerce.ithena.io",
-                    "icon": "bi bi-cart",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
-                }
-            ],
-            "manufacturer": [{
-                    "name": "iGEMBA",
-                    "url": "https://igemba.ithena.io",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-card-checklist"
-                },
-                {
-                    "name": "Performance Monitoring",
-                    "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-graph-up-arrow"
-                },
-                {
-                    "name": "CMMS",
+                }],
+                "After Market Services": [{
+                        "name": "Service Portal",
+                        "url": "https://iserv-demo.ithena.io/iserv",
+                        "icon": "bi bi-person-fill-gear",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
+                    },
+                    {
+                        "name": "B2B eCommerce",
+                        "url": "https://ecommerce.ithena.io",
+                        "icon": "bi bi-cart",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
+                    }
+                ]
+            },
+            "manufacturer": {
+                "Production": [{
+                        "name": "iGEMBA",
+                        "url": "https://igemba.ithena.io",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "icon": "bi bi-card-checklist"
+                    },
+                    {
+                        "name": "Performance Monitoring",
+                        "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "icon": "bi bi-graph-up-arrow"
+                    },
+                    {
+                        "name": "MES",
+                        "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "icon": "bi bi-graph-up-arrow"
+                    }
+                ],
+                "Maintenance": [{
+                        "name": "CMMS",
+                        "url": "http://3.110.9.169:8023/iserv/scp/",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "icon": "bi bi-cart"
+                    },
+                    {
+                        "name": "iSEM",
+                        "url": "http://3.110.9.169:8023/iserv/scp/",
+                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "icon": "bi bi-cart"
+                    }
+                ],
+                "Planning": [{
+                    "name": "iPLAN",
                     "url": "http://3.110.9.169:8023/iserv/scp/",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
                     "icon": "bi bi-cart"
-                }
-            ]
+                }],
+                "Quality": [{
+                    "name": "QMS",
+                    "url": "http://3.110.9.169:8023/iserv/scp/",
+                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                    "icon": "bi bi-cart"
+                }]
+            }
         };
 
-        function generateHTMLCards(products, mode) {
+        function generateHTMLCards(products, mode, key) {
             let html = '';
-            products[mode].forEach((product) => {
-                html += `<div class="col-md-12 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0 slide-card" >
+            products[mode][key].forEach((product) => {
+                html += `<div class="col-md-12 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 slide-card" >
                       <a href="${product.url}" class="icon-href" target="_blank">
                           <div class="icon-box" style="border-bottom: 5px solid #0282C8;">
                               <div class="icon"><i class="${product.icon}"></i></div>
@@ -187,44 +230,78 @@
             return html
         }
 
-        function showOEM() {
-            const oemCards = document.getElementById('oemCards');
-            const manufacturerExtraCard = document.getElementById('manufacturerExtraCard');
+        function generateHeadingHTML(products, mode) {
+            let html = '';
+            Object.keys(products[mode]).forEach((key, product) => {
 
-            var html = generateHTMLCards(prod_list, 'oem');
-            $('#oemCards').html(html);
-            $('#manufacturerExtraCard').hide();
-            $('#oemCards').show();
+                html += `<div class="col-md-3" style="padding: 0; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                        <div class="card text-center shadow-sm selectable-card headingCard" role="button" 
+                            onclick="showProducts('${key}', '${mode}')" id="${key}">
+                            <div class="card-body">
+                                <h4 class="card-title mt-3" style=" font-size: 18px;color: #fcfcfc; font-weight: 700">${key}</h4>
+                            </div>
+                        </div>
+                    </div>`;
+
+            });
+            return html
+        }
+
+        function showOEM() {
+            const oemCardHeading = document.getElementById('oemCardHeadings');
+            const html = generateHeadingHTML(prod_list, 'oem');
+            $('#oemCardHeadings').html(html);
+            $('#productCards').hide();
+            $('#oemCardHeadings').show();
+            $('#manuCardHeadings').hide();
 
             highlightCard('oemCard');
 
             setTimeout(() => {
-                oemCards.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
+                oemCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
             }, 10);
         }
 
+        function showProducts(key, mode) {
+            console.log(key);
+            const productCards = document.getElementById('productCards');
+            const parentKey = mode === 'oem' ? 'oemCardHeadings' : 'manuCardHeadings'
+            var html = generateHTMLCards(prod_list, mode, key);
+            $('#productCards').html(html);
+            $('#productCards').show();
+
+            highlightHeadingCard(key, parentKey);
+
+            setTimeout(() => {
+                productCards.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
+            }, 10);
+
+        }
+
         function showManufacturer() {
-            const oemCards = document.getElementById('oemCards');
-            const manufacturerExtraCard = document.getElementById('manufacturerExtraCard');
-
-            var html = generateHTMLCards(prod_list, 'manufacturer');
-
-            $('#manufacturerExtraCard').html(html);
-            $('#oemCards').hide();
-            $('#manufacturerExtraCard').show();
+            const manuCardHeading = document.getElementById('manuCardHeadings');
+            const html = generateHeadingHTML(prod_list, 'manufacturer');
+            $('#manuCardHeadings').html(html);
+            $('#manufacturerExtraCard').hide();
+            $('#productCards').hide();
+            $('#oemCardHeadings').hide();
+            $('#manuCardHeadings').show();
 
             highlightCard('manufacturerCard');
 
             setTimeout(() => {
-                oemCards.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
-                manufacturerExtraCard.querySelectorAll('.slide-card').forEach(card => card.classList
-                    .add(
-                        'show'));
+                manuCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
             }, 10);
         }
 
         function highlightCard(selectedId) {
             document.querySelectorAll('.selectable-card').forEach(card => card.classList.remove('active'));
+            document.getElementById(selectedId).classList.add('active');
+        }
+
+        function highlightHeadingCard(selectedId, parentKey) {
+            document.querySelectorAll(`#${parentKey} .headingCard`).forEach(card => card.classList.remove(
+                'active'));
             document.getElementById(selectedId).classList.add('active');
         }
         </script>
@@ -235,7 +312,7 @@
         <!-- ======= Footer ======= -->
         <footer id="footer">
 
-            <div class="container text-center" style="width: 80vw; max-width: 80vw; margin: 10px auto">
+            <div class="container text-center" style="width: 90vw; max-width: 90vw; margin: 10px auto">
                 <hr>
                 <div class="mt-1">
                     <span>Copyright &copy; 2011-2025 ITHENA
