@@ -1986,8 +1986,8 @@ section {
 }
 
 .headingCard:hover {
-	transform: scale(1.05);
-	border-bottom: 3px solid #0282c8 !important;
+	transform: scale(1) !important;
+	border-bottom: 3px solid #888888 !important;
 	box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); /* Increase opacity or blur */
 }
 

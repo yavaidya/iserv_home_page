@@ -178,6 +178,12 @@
                 ]
             },
             "manufacturer": {
+                "Planning": [{
+                    "name": "iPLAN",
+                    "url": "http://3.110.9.169:8023/iserv/scp/",
+                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                    "icon": "bi bi-calendar"
+                }],
                 "Production": [{
                         "name": "iGEMBA",
                         "url": "https://igemba.ithena.io",
@@ -197,6 +203,14 @@
                         "icon": "bi bi-x-diamond"
                     }
                 ],
+
+
+                "Quality": [{
+                    "name": "QMS",
+                    "url": "http://3.110.9.169:8023/iserv/scp/",
+                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                    "icon": "bi bi-kanban"
+                }],
                 "Maintenance": [{
                         "name": "CMMS",
                         "url": "http://3.110.9.169:8023/iserv/scp/",
@@ -209,19 +223,7 @@
                         "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
                         "icon": "bi bi-cart"
                     }
-                ],
-                "Planning": [{
-                    "name": "iPLAN",
-                    "url": "http://3.110.9.169:8023/iserv/scp/",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-calendar"
-                }],
-                "Quality": [{
-                    "name": "QMS",
-                    "url": "http://3.110.9.169:8023/iserv/scp/",
-                    "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-kanban"
-                }]
+                ]
             }
         };
 
@@ -249,7 +251,7 @@
                         <div class="card text-center shadow-sm selectable-card headingCard" role="button" 
                             onclick="showProducts('${key}', '${mode}')" id="${key}">
                             <div class="card-body">
-                                <h4 class="card-title mt-3" style=" font-size: 18px;color: #fcfcfc; font-weight: 700">${key}</h4>
+                                <h4 class="card-title mt-3" style=" font-size: 20px;color: #fcfcfc; font-weight: 700">${key}</h4>
                             </div>
                         </div>
                     </div>`;
