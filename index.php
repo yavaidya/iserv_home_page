@@ -159,7 +159,9 @@
             "oem": {
                 "Asset Management": [{
                     "name": "Performance Monitoring",
-                    "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                    "url": ["https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                        "http://3.6.40.214:8080"
+                    ],
                     "icon": "bi bi-graph-up-arrow",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations."
                 }],
@@ -192,7 +194,9 @@
                     },
                     {
                         "name": "Performance Monitoring",
-                        "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                        "url": ["https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
+                            "http://3.6.40.214:8080"
+                        ],
                         "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
                         "icon": "bi bi-graph-up-arrow"
                     },
@@ -230,15 +234,27 @@
         function generateHTMLCards(products, mode, key) {
             let html = '';
             products[mode][key].forEach((product) => {
+                let urlButtons = '';
+                if (Array.isArray(product.url) && product.url.length > 1) {
+                    product.url.forEach((url, index) => {
+                        urlButtons +=
+                            `<a target="_blank" href="${url}" class="btn btn-primary-outline" style="margin-right: 10px; width: 40%; border-color: #0282c8; color: #0282c8;">V${index + 1}</a>`;
+                    });
+                }
                 html += `<div class="col-md-12 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0 slide-card" >
-                      <a href="${product.url}" class="icon-href" target="_blank">
+                      <a href="${Array.isArray(product.url) ? product.url[0] : product.url}" class="icon-href" target="_blank">
                           <div class="icon-box" style="border-bottom: 5px solid #0282C8;">
                               <div class="icon"><i class="${product.icon}"></i></div>
                               <h4 class="title">${product.name}</h4>
                               <p class="description">${product.description}</p>
+                              <div style="width: 100%; margin-top: 10px">
+                                ${urlButtons}
+                              </div>
+                              
                           </div>
                       </a>
                   </div>`;
+
             });
             return html
         }
@@ -271,7 +287,8 @@
             highlightCard('oemCard');
 
             setTimeout(() => {
-                oemCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
+                oemCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add(
+                    'show'));
             }, 10);
 
             setTimeout(() => {
@@ -291,7 +308,8 @@
             highlightHeadingCard(key, parentKey);
 
             setTimeout(() => {
-                productCards.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
+                productCards.querySelectorAll('.slide-card').forEach(card => card.classList.add(
+                    'show'));
             }, 10);
 
         }
@@ -308,7 +326,8 @@
             highlightCard('manufacturerCard');
 
             setTimeout(() => {
-                manuCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
+                manuCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add(
+                    'show'));
             }, 10);
 
             setTimeout(() => {
