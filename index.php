@@ -264,7 +264,7 @@
             const oemCardHeading = document.getElementById('oemCardHeadings');
             const html = generateHeadingHTML(prod_list, 'oem');
             $('#oemCardHeadings').html(html);
-            $('#productCards').hide();
+            // $('#productCards').hide();
             $('#oemCardHeadings').show();
             $('#manuCardHeadings').hide();
 
@@ -301,7 +301,7 @@
             const html = generateHeadingHTML(prod_list, 'manufacturer');
             $('#manuCardHeadings').html(html);
             $('#manufacturerExtraCard').hide();
-            $('#productCards').hide();
+            // $('#productCards').hide();
             $('#oemCardHeadings').hide();
             $('#manuCardHeadings').show();
 
