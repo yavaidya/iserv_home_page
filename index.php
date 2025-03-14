@@ -62,8 +62,8 @@
             <div class="container d-flex align-items-center justify-content-between"
                 style="margin: 10px; width: 100vw; max-width: 100vw; position: relative;">
 
-                <!-- Left Section -->
-                <div>
+                <!-- Left Section (Hide on Mobile) -->
+                <div class="desktop-only">
                     <a href="https://play.google.com/store/apps/details?id=com.iserv&hl=en_US&gl=US" class="logo">
                         <img src="assets/img/goplay.png"
                             style="width: auto; height: 40px; border-radius: 10px; box-shadow: 0 0 8px 3px rgba(255,255,255,0.2);"
@@ -77,14 +77,14 @@
                     </a>
                 </div>
 
-                <!-- Centered Logo -->
-                <div style="position: absolute; left: 50%; transform: translateX(-50%);">
+                <!-- Centered Logo (Always Visible) -->
+                <div style="position: absolute; left: 50%; transform: translateX(-50%); top: 10px">
                     <img src="assets/img/ITHENA_logo.png" alt="ITHENA_logo" class="img-fluid shadow-sm"
                         style="width: 160px;">
                 </div>
 
-                <!-- Right Section -->
-                <div>
+                <!-- Right Section (Hide on Mobile) -->
+                <div class="desktop-only">
                     <a href="index.php" class="logo">
                         <img src="assets/img/onelinkQR.png" style="width: auto; height: 60px;" alt="" class="img-fluid">
                     </a>
@@ -92,6 +92,17 @@
 
             </div>
         </header>
+
+        <!-- CSS to Hide/Show Sections Based on Screen Width -->
+        <style>
+        /* Hide Left and Right Sections on Small Screens */
+        @media (max-width: 768px) {
+            .desktop-only {
+                display: none;
+            }
+        }
+        </style>
+
         <!-- End Header -->
 
         <section id="hero" class="d-flex align-items-center">
@@ -183,14 +194,14 @@
                         "name": "MES",
                         "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
                         "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                        "icon": "bi bi-graph-up-arrow"
+                        "icon": "bi bi-x-diamond"
                     }
                 ],
                 "Maintenance": [{
                         "name": "CMMS",
                         "url": "http://3.110.9.169:8023/iserv/scp/",
                         "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                        "icon": "bi bi-cart"
+                        "icon": "bi bi-person-fill-gear"
                     },
                     {
                         "name": "iSEM",
@@ -203,13 +214,13 @@
                     "name": "iPLAN",
                     "url": "http://3.110.9.169:8023/iserv/scp/",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-cart"
+                    "icon": "bi bi-calendar"
                 }],
                 "Quality": [{
                     "name": "QMS",
                     "url": "http://3.110.9.169:8023/iserv/scp/",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
-                    "icon": "bi bi-cart"
+                    "icon": "bi bi-kanban"
                 }]
             }
         };
