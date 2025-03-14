@@ -271,6 +271,11 @@
             setTimeout(() => {
                 oemCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
             }, 10);
+
+            setTimeout(() => {
+                const buttons = oemCardHeading.querySelectorAll('.selectable-card');
+                buttons[0].click();
+            }, 100);
         }
 
         function showProducts(key, mode) {
@@ -303,6 +308,11 @@
             setTimeout(() => {
                 manuCardHeading.querySelectorAll('.slide-card').forEach(card => card.classList.add('show'));
             }, 10);
+
+            setTimeout(() => {
+                const buttons = manuCardHeading.querySelectorAll('.selectable-card');
+                buttons[0].click();
+            }, 100);
         }
 
         function highlightCard(selectedId) {
