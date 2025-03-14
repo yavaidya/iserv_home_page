@@ -124,7 +124,8 @@
                         <div class="card text-center shadow-sm selectable-card" role="button" id="oemCard"
                             onclick="showOEM()">
                             <div class="card-body">
-                                <h4 class="card-title mt-3" style="color: #124265; font-weight: 700">OEM</h4>
+                                <h4 class="card-title mt-3" style="color: #124265; font-weight: 700; font-size: 26px">
+                                    OEM</h4>
                             </div>
                         </div>
                     </div>
@@ -134,7 +135,8 @@
                             onclick="showManufacturer()">
                             <div class="card-body">
                                 <i class="bi bi-industry display-4"></i>
-                                <h4 class="card-title mt-3" style="color: #124265; font-weight: 700">Manufacturer</h4>
+                                <h4 class="card-title mt-3" style="color: #124265; font-weight: 700; font-size: 26px">
+                                    Manufacturer</h4>
                             </div>
                         </div>
                     </div>
@@ -182,7 +184,7 @@
             "manufacturer": {
                 "Planning": [{
                     "name": "iPLAN",
-                    "url": "http://3.110.9.169:8023/iserv/scp/",
+                    "url": "#",
                     "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
                     "icon": "bi bi-calendar"
                 }],
@@ -203,12 +205,10 @@
                     {
                         "name": "MES",
                         "url": "https://pm-iserv.ithena.io/Thingworx/FormLogin/ISERV",
-                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "description": "Get a smarter view of your shop floor data. Digitize your Gemba walks to maximize shop floor productivity, resolve issues at hand, focus on quality, and scale operations on the factory floor!",
                         "icon": "bi bi-x-diamond"
                     }
                 ],
-
-
                 "Quality": [{
                     "name": "QMS",
                     "url": "http://3.110.9.169:8023/iserv/scp/",
@@ -218,12 +218,12 @@
                 "Maintenance": [{
                         "name": "CMMS",
                         "url": "http://3.110.9.169:8023/iserv/scp/",
-                        "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
+                        "description": "Digital, single-view of critical shopfloor KPIs, standardized checklist to resolve issues faster.",
                         "icon": "bi bi-person-fill-gear"
                     },
                     {
                         "name": "iSEM",
-                        "url": "http://3.110.9.169:8023/iserv/scp/",
+                        "url": "http://3.110.150.117:8080/",
                         "description": "Gain real-time connectivity into asset performance, receive proactive alerts and alarms to support your service operations.",
                         "icon": "bi bi-cart"
                     }
@@ -267,7 +267,7 @@
                         <div class="card text-center shadow-sm selectable-card headingCard" role="button" 
                             onclick="showProducts('${key}', '${mode}')" id="${key}">
                             <div class="card-body">
-                                <h4 class="card-title mt-3" style=" font-size: 20px;color: #fcfcfc; font-weight: 700">${key}</h4>
+                                <h4 class="card-title mt-3" style=" font-size: 22px;color: #fcfcfc; font-weight: 700">${key}</h4>
                             </div>
                         </div>
                     </div>`;
