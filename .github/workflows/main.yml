@@ -1,0 +1,25 @@
+name: "ITH Secret Scanner"
+
+on:
+  push:
+    branches:
+      - master
+      - "feature/*"
+      - "development/*"
+      - "release/*"
+  pull_request:
+    branches:
+      - master
+      - "feature/*"
+      - "development/*"
+      - "release/*"
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Run Token & Credential Scanner
+        uses: ./.github/actions/token-scanner
