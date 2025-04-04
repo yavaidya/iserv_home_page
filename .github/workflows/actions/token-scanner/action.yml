@@ -1,0 +1,5 @@
+name: "Token & Credential Scanner"
+description: "Scans the repository for leaked API keys, tokens, and credentials."
+runs:
+  using: "node20"
+  main: "index.js"
