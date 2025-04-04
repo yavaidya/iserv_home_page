@@ -23,14 +23,12 @@ body {
 	color: #444444;
 	background-color: rgba(255, 255, 255, 0.5);
 	height: 100vh;
+  background: url("../img/homebg.jpg") top center;
+	background-size: cover;
+
 }
 
-.main-bg {
-	background: url("https://ithena.ai/wp-content/uploads/2024/12/1-banner.jpg") top center;
-	background-size: cover;
-	height: 100vh;
-	width: 100vw;
-}
+
 
 a {
 	color: #2487ce;
@@ -470,7 +468,9 @@ h6 {
 }
 
 #hero .icon-box {
-	padding: 50px 30px;
+  min-height: 350px;
+  max-height: 350px;
+	padding: 30px;
 	position: relative;
 	overflow: hidden;
 	background: #fff;
@@ -1944,12 +1944,12 @@ section {
 
 .selectable-card:hover {
 	transform: scale(1.05);
-	border-bottom: 5px solid #0282c8;
+	border-bottom: 5px solid #0282c8 !important;
 	box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); /* Increase opacity or blur */
 }
 
 .selectable-card.active {
-	border-bottom: 5px solid #0282c8;
+	border-bottom: 5px solid #0282c8 !important;
 	box-shadow: 0 8px 24px rgba(215, 215, 215, 0.6); /* A more subtle active shadow */
 }
 
@@ -1976,4 +1976,22 @@ section {
 
 .selectable-card.active::after {
 	opacity: 0; /* Show the overlay when active */
+}
+
+.headingCard {
+  background-color: transparent !important;
+  border: 0px !important;
+  border-radius: 0;
+  color: #aaa !important
+}
+
+.headingCard:hover {
+	transform: scale(1) !important;
+	border-bottom: 3px solid #888888 !important;
+	box-shadow: 0 8px 24px rgba(255, 255, 255, 0.1); /* Increase opacity or blur */
+}
+
+.headingCard.active {
+	border-bottom: 3px solid #0282c8 !important;
+	box-shadow: 0 8px 24px rgba(215, 215, 215, 0.6); /* A more subtle active shadow */
 }
